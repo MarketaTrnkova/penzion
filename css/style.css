@@ -1,0 +1,286 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* google fonts latin extended pro podporu cestiny 
+
+font awesome pro ikony - linkuje se stejne jako google font nebo se stahnou soubory - css a slozku webfonts
+*/
+
+a, i{
+	color: #000;
+	text-decoration: none;
+	transition: 0.4s ease-in-out;
+}
+
+h1 {
+	text-transform: uppercase;
+	font-size: 50px;
+	padding: 50px 0 70px;
+}
+
+p{
+	line-height: 1.6;
+}
+
+img, iframe{
+	vertical-align: top; /* zbavim se defaultniho odsazeni u obrazku */
+}
+
+header .container{
+	width: 85%;
+}
+
+.container{
+	width: 75%;
+	margin: auto;
+	text-align: center;
+}
+
+.headerTop{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 30px 0;
+}
+
+.socIkony{
+	font-size: 22px;
+}
+
+.fa-square-facebook:hover{
+	color: #1566FF;
+}
+
+.fa-youtube:hover{
+ color: red;
+}
+
+.fa-instagram{
+background-size: 100% 80%;
+background-position: center;
+background-repeat: no-repeat;
+border-radius: 30px;
+transition: 0.4s ease-in-out;
+}
+
+.fa-instagram:hover{
+	background-image: linear-gradient(to right top, #feda75, #fa7e1e, #d62976,#962fbf, #4f5bd5);
+}
+
+.odkaz:hover{
+	color: #ff0b0b;
+	border-width: 100%;
+	text-decoration: underline;
+}
+
+.logo{
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 1;
+	text-transform: uppercase;
+}
+
+.menu ul{
+	display: flex;
+	list-style: none;
+	justify-content: center;
+	text-transform: uppercase;
+	gap:10px;
+	padding: 50px 0px;
+}
+
+.menu ul li a{
+	border-bottom: 0px solid red;
+	padding: 10px;
+}
+
+.menu ul li a:hover{
+	border-bottom: 2px solid red;
+}
+header img{
+	width: 100%;
+	height: auto;
+}
+
+/* ***************** SECTION ****************** */
+.info{
+	padding-bottom: 120px;
+}
+
+.info h2{
+	color: brown;
+	padding-bottom: 30px;
+}
+
+/* FOOTER  */
+footer{
+	text-align: center;
+}
+.pata{
+	background-color: rgba(128, 128, 128, 0.278);
+}
+
+footer .adresa{
+	display: flex;
+}
+
+footer .logo{
+	font-size: 20px;
+}
+
+footer span, .kontaktni-informace-sekce span{
+	color: red;
+	font-weight: bold;
+}
+
+.kontaktni-informace{
+	padding: 50px 0;
+}
+
+
+footer .socIkony{
+	font-size: 50px;
+	padding-bottom: 50px;
+}
+
+footer{
+	padding-bottom: 50px;
+}
+
+.copy{
+	padding-top: 50px;
+	font-size: 14px;
+	background-color: white;
+}
+
+
+/* KONTAKTNI STRANKA */
+
+.kontakt-wrapper{
+	background-color:  rgba(128, 128, 128, 0.278);
+	margin: 100px auto;
+	margin-bottom: 10px;
+	width: 75%;
+	padding: 0 50px 10px 50px;
+}
+
+.kontaktni-informace-sekce{
+	display: flex;
+	justify-content: space-between;
+	text-align: left;
+}
+
+.kontakt-sekce p i{
+	margin-right: 10px;
+}
+
+.karty i{
+	font-size: 50px;
+}
+
+.karty p{
+	padding: 10px;
+}
+
+.mapa{
+	width: 75%;
+	margin: auto;
+
+}
+.form-wrapper{
+	margin-top: 10px;
+	margin-bottom: 100px;
+}
+.form-wrapper h2{
+	text-align: center;
+	text-transform: uppercase;
+    font-size: 30px;
+    padding: 25px;
+}
+
+
+.form-wrapper form input[type="text"],input[type="number"], input[type="date"], input[type="email"],select, textarea{ /* aby se input ostyloval dobre, je potreba uvest type */
+	padding: 10px;
+	display: block;
+	width: 80%;
+	font-size: 16px;
+	border-radius: 5px;
+	border: 1px solid rgb(171, 171, 171);
+	margin: 5px auto;
+	font-family: 'Montserrat', sans-serif;
+}
+select{
+	color: grey;
+
+}
+option{
+	color: black;
+
+}
+.option1{
+	color: grey;
+	padding-right: 20px;
+}
+
+
+textarea{
+	height: 160px;
+	background-color: white; /* v nekterych prohlizecich je defaultne jina barva */
+}
+
+input[type="submit"]{
+	display: block;
+	padding: 10px 20px;
+	width: 200px;
+	border-radius: 5px;
+	border: 2px solid red;
+	color: red;
+	text-transform: uppercase;
+	background-color: transparent;
+	margin: 20px auto;
+	transition: 0.4s ease-in-out;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover{
+	background-color: red;
+	color: white;
+}
+
+.rezervace .kontakt-wrapper{
+margin-top: 100px;
+}
+
+/* GALERIE */
+
+.galerie{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 3px;
+}
+
+.galerie a {
+    width: 24%;
+} 
+
+.galerie a img {
+    width: 100%;
+    height: auto;
+}
+ 
+.top{
+	display: block;
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+	background-color: white;
+	box-shadow: 0px 0px 4px 2px rgba(128, 128, 128, 0.366);
+	padding: 25px;
+}
+
