@@ -1,9 +1,46 @@
+<?php 
+
+	$idStranky ="domu";
+
+	$poleStranek = array(
+		"domu" => [
+			"id" => "domu",
+			"titulek" => "Primapenzion",
+			"obrazek" => "primapenzion-main.jpg",
+			"menu" => "Domů"
+		],
+		"galerie" => [
+			"id" => "galerie",
+			"titulek" => "Fotogalerie",
+			"obrazek" => "primapenzion-pool-min.jpg",
+			"menu" => "Foto"
+		],
+		"rezervace" => [
+			"id" => "rezervace",
+			"titulek" => "Rezervace",
+			"obrazek" => "primapenzion-room.jpg",
+			"menu" => "Chci pokoj"
+		],
+		"kontakt" => [
+			"id" => "kontakt",
+			"titulek" => "Kontakt",
+			"obrazek" => "primapenzion-room2.jpg",
+			"menu" => "Napište nám"
+		]
+	);
+	if (array_key_exists("id-stranky", $_GET)) {
+		$idStranky = $_GET["id-stranky"];
+	}
+	
+
+?>
+
 <!DOCTYPE html>
 <lang="cs">
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Penzion</title>
+	<title><?php echo $poleStranek[$idStranky]["titulek"]; ?></title>
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,39 +62,29 @@
 				</div>
 			</div>
 			<div><a class="logo" href="#">Prima<br>penzion</a></div>
-
-			<div class="menu">
-				<ul>
-					<li><a href="index.html">domů</a></li>
-					<li><a href="kontakt.html">kontakt</a></li>
-					<li><a href="galerie.html">galerie</a></li>
-					<li><a href="rezervace.html">rezervace</a></li>
-				</ul>
-			</div>
-		</div>
+			<?php
+                require "./menu.php";
+            ?>
+			
 		<img src="img/primapenzion-main.jpg" alt="prima-penzion">
 	</header>
-	<section>
-		<div class="info">
-			<div class="container">
-				<h1 class="titulek">PENZION A RESTAURACE</h1> 
 
-				<h2 >Inspirováno krásnými věcmi.</h2>
-				
-				<p class="main-text">Hledáte ubytování v západních Čechách nebo dokonce klidný penzion v západních Čechách? Pak jste na správném místě. Rodinný penzion Žuhansta nabízí kromě příjemného a levného ubytování i celou řadu možností pro pořádání společenské akcí či výletů po okolní přírodě (oblast řeky Berounky), která je na seznamu UNESCO.</p>	
-			</div>
-		</div>
-	</section>
+
+	<?php 
+	require "./$idStranky.html";
+	?>
+
 	<footer>
 		<div class="pata">
-			<div class="menu">
-				<ul>
-					<li><a href="index.html">domů</a></li>
-					<li><a href="kontakt.html">kontakt</a></li>
-					<li><a href="galerie.html">galerie</a></li>
-					<li><a href="rezervace.html">rezervace</a></li>
-				</ul>
-			</div>
+
+			<?php 
+			
+			require "./menu.php";
+			
+			?>
+
+				
+			
 			<div class="logo">
 				<a class="logo" href="#">Prima<br>penzion</a>
 			</div>
@@ -78,6 +105,3 @@
 			<div class="copy">&copy<b>PrimaPenzion</b> 2023</div>
 		</div>
 </footer>
-
-</body>
-</html>
