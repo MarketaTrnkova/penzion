@@ -3,7 +3,7 @@
 				<?php 
 					
 					foreach($poleStranek AS $stranka){
-						echo "<li><a href='?id-stranky={$stranka['id']}'>{$stranka['menu']}</a></li>";
+						echo "<li><a href='?id-stranky={$stranka->getId()}'>{$stranka->getMenu()}</a></li>";
 					}
 				?>
 				</ul>

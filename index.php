@@ -2,32 +2,8 @@
 
 	$idStranky ="domu";
 
-	$poleStranek = array(
-		"domu" => [
-			"id" => "domu",
-			"titulek" => "Primapenzion",
-			"obrazek" => "primapenzion-main.jpg",
-			"menu" => "Domů"
-		],
-		"galerie" => [
-			"id" => "galerie",
-			"titulek" => "Fotogalerie",
-			"obrazek" => "primapenzion-pool-min.jpg",
-			"menu" => "Foto"
-		],
-		"rezervace" => [
-			"id" => "rezervace",
-			"titulek" => "Rezervace",
-			"obrazek" => "primapenzion-room.jpg",
-			"menu" => "Chci pokoj"
-		],
-		"kontakt" => [
-			"id" => "kontakt",
-			"titulek" => "Kontakt",
-			"obrazek" => "primapenzion-room2.jpg",
-			"menu" => "Napište nám"
-		]
-	);
+	require_once "./data.php";
+	
 	if (array_key_exists("id-stranky", $_GET)) {
 		$idStranky = $_GET["id-stranky"];
 	}
@@ -40,11 +16,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title><?php echo $poleStranek[$idStranky]["titulek"]; ?></title>
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<title><?php echo  $poleStranek[$idStranky]->getTitulek(); ?></title>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/all.min.css">
 	
@@ -66,7 +38,7 @@
                 require "./menu.php";
             ?>
 			
-		<img src="img/primapenzion-main.jpg" alt="prima-penzion">
+			<img src="<?php echo "./img/{$poleStranek[$idStranky]->getObrazek()}" ?>" alt="PrimaPenzion">
 	</header>
 
 
@@ -82,7 +54,6 @@
 			require "./menu.php";
 			
 			?>
-
 				
 			
 			<div class="logo">
